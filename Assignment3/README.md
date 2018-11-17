@@ -17,6 +17,7 @@ The program is divided into a few files
 - *employee.c* and *employee.h* contains the code to handle employee structs.
 - *patient.c* and *patient.h* contains the code to handle patient structs.
 - *person_list.c* and *person_list.h* contains the code to handle a list of persons and run basic operations on that list.
+- *hospital.c* is the main program, it is tasked with loading sample lists, modifying them and printing their content for testing purposes.
 
 Other files are files for testing and to fill lists with sample data.
 
