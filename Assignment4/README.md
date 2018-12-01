@@ -1,8 +1,8 @@
 # Assignment 4
 
-By Guillaume St-Pierre, 16/11/2018
+By Guillaume St-Pierre, 01/12/2018
 
-This assignment is feature complete and also implements the two bonus tasks of making multiSpawn use the number of numbers inthe binary file rather than a hardcoded number as well as the multSpawnSignal program thatimpleents a signal into multiSpawn.
+This assignment is feature complete and also implements the two bonus tasks of making multiSpawn use the number of numbers in the binary file rather than a hardcoded number as well as the multSpawnSignal program that impleents a signal into multiSpawn.
 
 ## SinglePrime
 
@@ -27,7 +27,7 @@ Execute with `./singlePrime prime.bin; echo $?`. The program will tell you if so
 
 ### Description
 
-This program spawn a new process that will morphs itself into the `isPrime` program to check if the first number of the given binary file is a prime number.
+This program spawns a new process that will morphs itself into the `isPrime` program to check if the first number of the given binary file is a prime number.
 
 ### Files
 
@@ -46,7 +46,7 @@ Execute with `./singleSpawn prime.bin; echo $?`. The program will tell you if so
 
 ### Description
 
-This program spawn as many process as there are numbers in the given file and each process will morph itself into the `isPrime` program to check if the number they are assigned is a prime number.
+This program spawn as many processes as there are numbers in the given file and each process will morph itself into the `isPrime` program to check if the number they are assigned is a prime number.
 
 ### Files
 
@@ -65,7 +65,7 @@ Execute with `./multiSpawn prime.bin`. The program will tell you if some paramet
 
 ### Description
 
-This program spawn as many process as there are numbers in the given file and each process will morph itself into the `isPrime` program to check if the number they are assigned is a prime number.
+This program spawn as many processes as there are numbers in the given file and each process will morph itself into the `isPrime` program to check if the number they are assigned is a prime number.
 
 This program also implements a handler for the special signal SIGUSR1 to show the number of process still running when received.
 
@@ -93,7 +93,7 @@ These files are shared between all programs.
 - *morph.c* and *morph.h* A file with function that can help with managing process and morph programs.
 
 ## Data files
-- *prime.bin* A binary file coaining up to 12 prime numbers represented as a unsigned integer.
+- *prime.bin* A binary file containing up to 12 prime numbers represented as a unsigned integer.
 - *prime.txt* A textual representation of *prime.bin*.
 
 ## Known limitations
