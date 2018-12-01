@@ -2,8 +2,14 @@
 #include "helpers.h"
 #include "morph.h"
 #include "unistd.h"
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+
+void sighandler(int);
+
+int totalProcesses = 0;
+int processFinished = 0;
 
 int main(int argc, char *argv[])
 {
@@ -23,10 +29,15 @@ int main(int argc, char *argv[])
     FILE* file = fopen(argv[1], "rb+");
     //Check the file's size and divide by the size of an unsigned int
     int numberCount = fsize(file) / sizeof(unsigned int);
+    totalProcesses = numberCount;
     unsigned int num[numberCount];
     // Read all the elements in the file
     fread(&num, sizeof(unsigned int) * numberCount, 1, file);
     fclose(file);
+    
+    // Starts a signal handle on the special SIGUSR1, will show the number of process finished and running when called
+    // To test, change the sleep time of isPrime to 1000 and execute `kill -10 <process>` while this program runs
+    signal(SIGUSR1, sighandler);
     
     int childProcessIds[numberCount];
     // Loop for each number.
@@ -68,7 +79,14 @@ int main(int argc, char *argv[])
         }
         // Reduce the number of children so we have an "end" clause.
         --numberChildren;
+        processFinished++;
     }
     
     return 0;
+}
+
+void sighandler(int signum)
+{
+    printf("Signal %d received, %d processes have finished, %d remaining \n", signum, processFinished,
+        totalProcesses - processFinished);
 }

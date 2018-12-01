@@ -16,3 +16,20 @@ int fexists(char *fileName)
     fclose(file);
     return 1;
 }
+
+/*
+ * fsize check the size of the given file pointer.
+ * @param file The file pointer
+ * @returns Returns the file size in bytes or -1 if the file is null.
+ */
+int fsize(FILE* file)
+{
+    if (file == NULL)
+    {
+        return -1;
+    }
+    fseek(file, 0L, SEEK_END);
+    int size = ftell(file);
+    fseek(file, 0L, SEEK_SET);
+    return size;
+}

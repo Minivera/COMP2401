@@ -1,0 +1,7 @@
+build: multiSpawnSignal.c morph.c helpers.c
+	gcc -o isPrime isPrime.c
+	gcc -o multiSpawnSignal multiSpawnSignal.c morph.c helpers.c
+
+clean: 
+	rm -f isPrime
+	rm -f multiSpawnSignal
