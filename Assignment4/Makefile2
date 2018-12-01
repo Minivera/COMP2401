@@ -1,0 +1,7 @@
+build: singleSpawn.c morph.c helpers.c
+	gcc -o isPrime isPrime.c
+	gcc -o singleSpawn singleSpawn.c morph.c helpers.c
+
+clean: 
+	rm -f isPrime
+	rm -f singleSpawn

@@ -1,0 +1,10 @@
+File emp.bin exists 
+Original person
+Person Name =Shir   kirsh  age = 59 
+ Salaray: y[0]= 34360.000000  y[1]= 30128.000000  y[2]= 34744.000000  y[3]= 30256.000000  y[4]= 34992.000000 
+Record number is 5, should be 5
+
+Modified person
+Person Name =Shir   kirsh  age = 36 
+ Salaray: y[0]= 47500.000000  y[1]= 40000.000000  y[2]= 23000.000000  y[3]= 51000.000000  y[4]= 37000.000000 
+

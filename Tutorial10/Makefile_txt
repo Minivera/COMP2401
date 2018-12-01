@@ -1,0 +1,14 @@
+
+
+# I/O tutotrial makefile
+#
+
+p_txt: main_txt.c
+	gcc -o Tutorial10.exe  main_txt.c
+
+
+delete: 
+	rm *.o
+	rm *.exe
+
+

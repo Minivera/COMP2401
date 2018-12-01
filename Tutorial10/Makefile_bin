@@ -1,0 +1,29 @@
+
+
+# I/O tutotrial makefile
+#
+
+person: main_bin.o person.o mystat.o
+	gcc -o Tutorial10.exe main_bin.o person.o mystat.o
+
+main_bin.o: main_bin.c person.h mystat.h
+	gcc -c main_bin.c
+
+mystat.o: mystat.h mystat.c
+	gcc -c mystat.c
+
+person.o: person.h person.c
+	gcc -c person.c
+
+build:
+	make -f Makefile_bin main_bin.o
+	make -f Makefile_bin mystat.o
+	make -f Makefile_bin person.o
+	make -f Makefile_bin person
+
+clean: 
+	rm -f *.o
+	rm -f *.exe
+	cp emp_original.bin emp.bin
+
+
